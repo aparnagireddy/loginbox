@@ -11,7 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 class Dashboard extends React.Component {
 
   handleClick = () => {
-    this.props.history.push("/login");
+    this.props.history.push("/signin");
   };
   render() {
     return (
@@ -26,8 +26,13 @@ class Dashboard extends React.Component {
           </Typography>
           <Button color="inherit" onClick={this.handleClick}>Sign Out</Button>
         </Toolbar>
-              Welcome to Studio Z
       </AppBar>
+      <div>
+              <h1>
+                Welcome to Studio Z
+              </h1>
+      </div>
+               
     </div>
     );
   }

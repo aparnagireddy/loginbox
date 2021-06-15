@@ -13,14 +13,13 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
 import './App.css';
 const config = {
-  apiKey: "AIzaSyBO-lR44grlyS7cfSOHinVG25FSy2-MKlw",
-  authDomain: "zoomfresh-ops.firebaseapp.com",
-  databaseURL: "https://zoomfresh-ops.firebaseio.com",
-  projectId: "zoomfresh-ops",
-  storageBucket: "zoomfresh-ops.appspot.com",
-  messagingSenderId: "1072758282138",
-  appId: "1:1072758282138:web:4d8da8987f2162704a0c23",
-  measurementId: "G-63CN4R208D"
+  apiKey: "AIzaSyBGAQ1P5y612ndgD0cH2PUJ_itCHi19jpQ",
+  authDomain: "studioz-auth.firebaseapp.com",
+  projectId: "studioz-auth",
+  storageBucket: "studioz-auth.appspot.com",
+  messagingSenderId: "283010654704",
+  appId: "1:283010654704:web:5daa59447e13fe4f03bd35",
+  measurementId: "G-9GLXQS02GV"
 };
 firebase.initializeApp(config);
 
