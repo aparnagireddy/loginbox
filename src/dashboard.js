@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
           </Typography>
           <Button color="inherit" onClick={this.handleClick}>Sign Out</Button>
         </Toolbar>
-              Welcome to Studio X
+              Welcome to Studio Z
       </AppBar>
     </div>
     );
