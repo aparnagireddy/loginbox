@@ -8,10 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-class Home extends React.Component {
+class Dashboard extends React.Component {
 
   handleClick = () => {
-    this.props.history.push("/signin");
+    this.props.history.push("/login");
   };
   render() {
     return (
@@ -24,12 +24,12 @@ class Home extends React.Component {
           <Typography variant="h6" className="">
               Studio Z
           </Typography>
-          <Button color="inherit" onClick={this.handleClick}>Sign In</Button>
+          <Button color="inherit" onClick={this.handleClick}>Sign Out</Button>
         </Toolbar>
+              Welcome to Studio X
       </AppBar>
-      {/* <img src="logo.svg" alt="Girl in a jacket" width="500" height="600"></img> */}
     </div>
     );
   }
 }
-export default withRouter(Home);
+export default withRouter(Dashboard);
