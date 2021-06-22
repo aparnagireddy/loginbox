@@ -28,7 +28,7 @@ const uiConfig = {
   // Popup signin flow rather than redirect flow.
   signInFlow: 'popup',
   // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-  signInSuccessUrl: 'https://master.dyqwuynarg9lx.amplifyapp.com/dashboard',
+  signInSuccessUrl: 'https://master.dyqwuynarg9lx.amplifyapp.com/appointment',
   // We will display Google and Facebook as auth providers.
   signInOptions: [
     {
@@ -40,7 +40,8 @@ const uiConfig = {
         badge: 'bottomleft'
       },
       whitelistedCountries: ['US'],
-    }
+    },
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
 };
 class Login extends React.Component {
@@ -62,10 +63,14 @@ class Login extends React.Component {
                 </Toolbar>
             </AppBar>
         </div>
-        <div className ="auth-container">
-        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-
-        </div>           
+        <div className="imgbox">
+          <div className ="auth-container">
+              <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+          </div> 
+          {/* <img  className="center-fit" src="bg.png" alt="Girl in a jacket">  
+          </img> */}
+        </div>
+               
         </section>
     );
   }

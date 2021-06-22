@@ -3,13 +3,13 @@ import { render } from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Signin from "./signin";
 import Home from "./home";
-import Dashboard from "./dashboard"
+import Appointment from "./appointment"
 const Loginbox = () => (
   <Router>
     <div>
       <Route exact path="/" component={Home} />
       <Route path="/signin" component={Signin} />
-      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/appointment" component={Appointment} />
     </div>
   </Router>
 );

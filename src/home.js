@@ -27,7 +27,9 @@ class Home extends React.Component {
           <Button color="inherit" onClick={this.handleClick}>Sign In</Button>
         </Toolbar>
       </AppBar>
-      {/* <img src="logo.svg" alt="Girl in a jacket" width="500" height="600"></img> */}
+      {/* <div class="imgbox">
+      <img  class="center-fit" src="bg.png" alt="Girl in a jacket"></img>
+     </div> */}
     </div>
     );
   }
