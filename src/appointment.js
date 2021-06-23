@@ -14,13 +14,40 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
-// import Grid from '@material-ui/core/Grid';
+import Alert from '@material-ui/lab/Alert';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import firestore from "./firestore";
 class Dashboard extends React.Component {
-
+  constructor() {
+    super();
+    this.state = {
+     name:'',
+     appointmentdate: '',
+     showalert: false
+    };
+  }
   handleClick = () => {
     this.props.history.push("/signin");
   };
+
+  updateInput = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  }
+
+  addAppointment = e => {
+    e.preventDefault();
+    const db = firestore.firestore();
+    const userRef = db.collection('appts').add({
+      name: this.state.name,
+      appointmentdate: this.state.appointmentdate
+    });  
+    this.setState({
+      showalert: true
+    });
+  };
+
   render() {
     return (
     <div className="">
@@ -35,32 +62,37 @@ class Dashboard extends React.Component {
           <Button color="inherit" onClick={this.handleClick}>Sign Out</Button>
         </Toolbar>
       </AppBar>
-      <div className = "appt">
-      <FormControl className="margin-tp">
-        <InputLabel htmlFor="name" size="normal">Name</InputLabel>
-        <Input
-          id="name"
-          size="normal"
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
-        />
-        <TextField
-            id="datetime-local"
-            label="Appointment"
-            type="datetime-local"
-            defaultValue="2017-05-24T10:30"
-            className="margin-tp"
-            InputLabelProps={{
-              shrink: true,
-            }}
-        />
-        <Button variant="contained" color="primary">
-           Schedule an appointment
-        </Button>
-      </FormControl>
+      <div className = "schedule-container schedule-container-card box-shadow ">
+        {this.state.showalert && 
+          <Alert severity="success">You successfully scheduled an appointment</Alert>
+        }
+          <FormControl className="margin-lft margin-tp">
+            <InputLabel htmlFor="name" size="normal" className="">Name</InputLabel>
+            <Input
+              id="name"
+              size="normal"
+              onChange={this.updateInput}
+              startAdornment={
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              }
+            />
+            <TextField
+                id="appointmentdate"
+                label="Appointment"
+                type="datetime-local"
+                onChange={this.updateInput}
+                defaultValue=""
+                className="margin-tp"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+            />
+            <Button variant="contained" color="primary" className="sc-btn" onClick={this.addAppointment}>
+              Schedule an appointment
+            </Button>
+          </FormControl>
       </div>
                
     </div>

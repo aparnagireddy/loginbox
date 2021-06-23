@@ -64,7 +64,7 @@
 }
 body {
   background-image: url("bg.png");
-  background-size: 300px 100px;
+  background-size: cover;
 }
 .appt {
   position: absolute;
@@ -77,5 +77,36 @@ body {
   background:white
 }
 .margin-tp {
+  margin-top:  20px !important; 
+}
+.margin-lft {
+  margin-left:  50px !important; 
+}
+.sc-btn {
+  margin-top:  20px !important; 
+  margin-bottom:  40px !important; 
+}
+.schedule-container {
+  background-color: #fff;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  color: rgba(0,0,0,.87);
+  direction: ltr;
+  font: 16px Roboto,arial,sans-serif;
+  margin: 0 auto;
+  max-width: 360px;
   margin-top: 30px;
+}
+.schedule-container-card {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 200px;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.box-shadow {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
